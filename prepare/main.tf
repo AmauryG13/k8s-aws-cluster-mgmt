@@ -1,5 +1,6 @@
 locals {
   group_name = element(concat(aws_iam_group.this.*.id, [var.name]), 0)
+  users_name = element(concat(aws_iam_group.this.*.users, [var.name]), 0)
 }
 
 resource "aws_iam_group" "this" {

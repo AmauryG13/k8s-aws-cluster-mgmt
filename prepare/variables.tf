@@ -1,7 +1,7 @@
 variable "create_group" {
   description = "Whether to create IAM group"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "name" {
@@ -13,14 +13,24 @@ variable "name" {
 variable "group_users" {
   description = "List of IAM users to have in an IAM group which can assume the role"
   type        = list(string)
-  default     = []
+  default     = [
+    kops,
+    kops-admin,
+    kops-users,
+  ]
 }
 
 variable "custom_group_policy_arns" {
   description = "List of IAM policies ARNs to attach to IAM group"
   type        = list(string)
   default     = [
-    
+    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+    "arn:aws:iam::aws:policy/AmazonRoute53FullAccess",
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+    "arn:aws:iam::aws:policy/IAMFullAccess",
+    "arn:aws:iam::aws:policy/AmazonVPCFullAccess",
+    "arn:aws:iam::aws:policy/AmazonSQSFullAccess",
+    "arn:aws:iam::aws:policy/AmazonEventBridgeFullAccess"
   ]
 }
 
@@ -33,7 +43,7 @@ variable "custom_group_policies" {
 variable "attach_iam_self_management_policy" {
   description = "Whether to attach IAM policy which allows IAM users to manage their credentials and MFA"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "iam_self_management_policy_name_prefix" {
