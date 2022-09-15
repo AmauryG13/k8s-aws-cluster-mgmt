@@ -10,13 +10,17 @@ variable "name" {
   default     = "kops"
 }
 
+variable "create_users" {
+  description = "Whether to create IAM users"
+  type        = bool
+  default     = false 
+}
+
 variable "group_users" {
   description = "List of IAM users to have in an IAM group which can assume the role"
   type        = list(string)
   default     = [
-    kops,
-    kops-admin,
-    kops-users,
+    "kops", "kops-admin", "kops-users",
   ]
 }
 

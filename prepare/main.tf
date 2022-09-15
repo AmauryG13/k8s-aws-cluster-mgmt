@@ -1,6 +1,11 @@
 locals {
   group_name = element(concat(aws_iam_group.this.*.id, [var.name]), 0)
-  users_name = element(concat(aws_iam_group.this.*.users, [var.name]), 0)
+}
+
+resource "aws_iam_user" "this" {
+  count = var.create_users ? length(var.group_users) : 0
+  
+  name = element(var.group_users, count.index)
 }
 
 resource "aws_iam_group" "this" {
