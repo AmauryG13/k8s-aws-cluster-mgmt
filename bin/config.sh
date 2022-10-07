@@ -1,25 +1,38 @@
 #! /bin/sh
+set -e
 
-ENV=$1
+source $(dirname "$0")/functions.sh
 
-# Cluster
-NAME=k8s.cluster.amaury13.fr
-DNS=amauryg13.fr
-NETWORK=weave
+EXE=kops
 
+configure_DNS_gossip () {
+    if [ ${DNS} == "gossip" ]; then
+        NAME=${NAME}.k8s.local
+    fi
+}
 
-# AWS
-AWS_ZONE="eu-west-3"
-STATE_STORE="s3://state.cluster.amauryg13.fr"
-MASTER_SIZE="t2.micro"
-NODE_SIZE="t2.micro"
+check_cli ${EXE}
+load_ENV_file
+configure_DNS_gossip
+
 
 kops create cluster ${NAME} \
     --state ${STATE_STORE} \
-    --zones "${AWS_ZONE}a,${AWS_ZONE}b,${AWS_ZONE}c" \
-    --master-zones "${AWS_ZONE}a,${AWS_ZONE}b,${AWS_ZONE}c" \
+    --zones "${AWS_REGION}a" \
     --topology private \
+    --networking ${NETWORK} \
     --bastion \
     --node-count 3 \
-    --dry-run \
-    -o yaml > ${ENV}.yaml 
+    --out . \
+    --target=terraform
+
+#kops create cluster ${NAME} \
+#    --state ${STATE_STORE} \
+#    --zones "${AWS_REGION}a,${AWS_REGION}b,${AWS_REGION}c" \
+#    --master-zones "${AWS_REGION}a,${AWS_REGION}b,${AWS_REGION}c" \
+#    --topology private \
+#    --networking ${NETWORK} \
+#    --bastion \
+#    --node-count 3 \
+#    --out . \
+#    --target=terraform
