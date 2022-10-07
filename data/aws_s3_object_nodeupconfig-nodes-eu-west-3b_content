@@ -1,0 +1,73 @@
+Assets:
+  amd64:
+  - 631e31b3ec648f920292fdc1bde46053cca5d5c71d622678d86907d556efaea3@https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/amd64/kubelet
+  - 8639f2b9c33d38910d706171ce3d25be9b19fc139d0e3d4627f38ce84f9040eb@https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/amd64/kubectl
+  - 962100bbc4baeaaa5748cdbfce941f756b1531c2eadb290129401498bfac21e7@https://storage.googleapis.com/k8s-artifacts-cni/release/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
+  - 3a1322c18ee5ff4b9bd5af6b7b30c923a3eab8af1df05554f530ef8e2b24ac5e@https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-amd64.tar.gz
+  - db772be63147a4e747b4fe286c7c16a2edc4a8458bd3092ea46aaee77750e8ce@https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64
+  - 528ff265785b151bedbfa03fd22a8b6c1e08cba86523a7e520371f1ab9410e66@https://artifacts.k8s.io/binaries/kops/1.25.1/linux/amd64/protokube,https://github.com/kubernetes/kops/releases/download/v1.25.1/protokube-linux-amd64
+  - d188502fcab94e960184c6c87f1c222dcacbf4a30dd8d8e0070cd6e4771b622a@https://artifacts.k8s.io/binaries/kops/1.25.1/linux/amd64/channels,https://github.com/kubernetes/kops/releases/download/v1.25.1/channels-linux-amd64
+  arm64:
+  - c9348c0bae1d723a39235fc041053d9453be6b517082f066b3a089c3edbdd2ae@https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/arm64/kubelet
+  - b26aa656194545699471278ad899a90b1ea9408d35f6c65e3a46831b9c063fd5@https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/arm64/kubectl
+  - ef17764ffd6cdcb16d76401bac1db6acc050c9b088f1be5efa0e094ea3b01df0@https://storage.googleapis.com/k8s-artifacts-cni/release/v0.9.1/cni-plugins-linux-arm64-v0.9.1.tgz
+  - b114e36ecce78cef9d611416c01b784a420928c82766d6df7dc02b10d9da94cd@https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-arm64.tar.gz
+  - dbb71e737eaef454a406ce21fd021bd8f1b35afb7635016745992bbd7c17a223@https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.arm64
+  - 0f2411cd7025b33ae7c91e1c633688df4838985ff86df7d128e39d10ddeea65b@https://artifacts.k8s.io/binaries/kops/1.25.1/linux/arm64/protokube,https://github.com/kubernetes/kops/releases/download/v1.25.1/protokube-linux-arm64
+  - 8d32c9373c5d00ef72f91a40d81477955e4c6fb6aefea80cc9c7d40803b14a63@https://artifacts.k8s.io/binaries/kops/1.25.1/linux/arm64/channels,https://github.com/kubernetes/kops/releases/download/v1.25.1/channels-linux-arm64
+CAs:
+  kubernetes-ca: |
+    -----BEGIN CERTIFICATE-----
+    MIIC+DCCAeCgAwIBAgIMFxvD2ePGMvjrAmjmMA0GCSqGSIb3DQEBCwUAMBgxFjAU
+    BgNVBAMTDWt1YmVybmV0ZXMtY2EwHhcNMjIxMDA1MTA1MDI4WhcNMzIxMDA0MTA1
+    MDI4WjAYMRYwFAYDVQQDEw1rdWJlcm5ldGVzLWNhMIIBIjANBgkqhkiG9w0BAQEF
+    AAOCAQ8AMIIBCgKCAQEAwBa0OMQ7RlEMZCUVmlrIvoRvTs7NOoPoUNby1yDZP4YO
+    UmiPuvNUWOsS5VdeBYwC97AN2KZYLQG5fIBf6dI9eE1eHp29yeSyfhFxFGgiXFnx
+    yZ0MVybYjwtvScp09oqe6kcZQsF8bJijPkO5MXDzGVQcyXR67WZAdIEy2ouo7mTu
+    tpHWPnzUKZPwWKtTtosaUsEIb72xctjIgodQMKtzFMFxlTtwNxC8ufj7p0PxGk45
+    kiOdv8RjWmkRcHn1iMhl+bo5gBT5HD+6sRsEX5FwE71pmMXdwP3WGYp63pvA0Atd
+    B/+y59iVGAXlR5S1mtWSUMoljKHNU06bKe8CtDz1vQIDAQABo0IwQDAOBgNVHQ8B
+    Af8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUZ6LEekZsvy+ALvYE
+    T6qXFR+3BlIwDQYJKoZIhvcNAQELBQADggEBAIkcbsceXqwd/uXZFPhvxmHndDos
+    W19JipJFYms1Ypc9yYy/I9SLO1LvvJYrzwnbaGCmoyuj8hHTAUTWj4GuOpGWeAAo
+    K9Pd2nZEeZfgJ4vSW3z3rtMNqVlDkLi9kJhJO0/tbwj2TbfR4BGSv6tGiqzF/t9N
+    wwjwE0CRA05oVTYuVx1PriHO5g7s6VCy7p+1vlQWNye30DvYYozfKBQ8ETcwagDJ
+    23sYsso3czM4jlSrtH60OkhPBzbIKJ0PHy9OzSqaRCv0AqDcQbDEch47zcJi7LLC
+    5qlpvfmN6oxZ671330VgHInWWGb75yY0KKtmX8hlnIOO9jK/jqW7jHxE7nQ=
+    -----END CERTIFICATE-----
+ClusterName: fr.amaury13.prod.k8s.local
+Hooks:
+- null
+- null
+KeypairIDs:
+  kubernetes-ca: "7151721103841017080850835686"
+KubeletConfig:
+  anonymousAuth: false
+  cgroupDriver: systemd
+  cgroupRoot: /
+  cloudProvider: external
+  clusterDNS: 100.64.0.10
+  clusterDomain: cluster.local
+  enableDebuggingHandlers: true
+  evictionHard: memory.available<100Mi,nodefs.available<10%,nodefs.inodesFree<5%,imagefs.available<10%,imagefs.inodesFree<5%
+  featureGates:
+    CSIMigrationAWS: "true"
+    InTreePluginAWSUnregister: "true"
+  kubeconfigPath: /var/lib/kubelet/kubeconfig
+  logLevel: 2
+  nodeLabels:
+    node-role.kubernetes.io/node: ""
+  podInfraContainerImage: registry.k8s.io/pause:3.6@sha256:3d380ca8864549e74af4b29c10f9cb0956236dfb01c40ca076fb6c37253234db
+  podManifestPath: /etc/kubernetes/manifests
+  protectKernelDefaults: true
+  shutdownGracePeriod: 30s
+  shutdownGracePeriodCriticalPods: 10s
+UpdatePolicy: automatic
+channels:
+- s3://amauryg13.cluster.prod.state/fr.amaury13.prod.k8s.local/addons/bootstrap-channel.yaml
+containerdConfig:
+  logLevel: info
+  runc:
+    version: 1.1.4
+  version: 1.6.8
+useInstanceIDForNodeName: true
