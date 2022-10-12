@@ -16,3 +16,15 @@ load_ENV_file () {
 
     source ${ENV_FILEPATH}
 }
+
+configure_HA () {
+    if [ ${HA} == true ]; then
+        NAME=${NAME}.ha
+    fi
+}
+
+configure_DNS_gossip () {
+    if [ ${DNS} == "gossip" ]; then
+        NAME=${NAME}.k8s.local
+    fi
+}

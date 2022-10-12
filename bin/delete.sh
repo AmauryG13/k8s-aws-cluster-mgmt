@@ -4,14 +4,10 @@ source $(dirname "$0")/functions.sh
 
 EXE=kops
 
-configure_DNS_gossip () {
-    if [ ${DNS} == "gossip" ]; then
-        NAME=${NAME}.k8s.local
-    fi
-}
-
 check_cli ${EXE}
 load_ENV_file
+
+configure_HA
 configure_DNS_gossip
 
 
