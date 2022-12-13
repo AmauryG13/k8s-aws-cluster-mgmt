@@ -1,4 +1,5 @@
 .creds/*
+.env
 
 # Local .terraform directories
 **/.terraform/*

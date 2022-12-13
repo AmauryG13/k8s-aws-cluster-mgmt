@@ -39,7 +39,7 @@ kops create cluster ${NAME} \
     --state ${STATE_STORE} \
     ${CLUSTER_ZONES} \
     --master-size ${MASTER_SIZE} \
-    --node-count 3 \
+    --node-count 1 \
     --node-size ${NODE_SIZE} \
     --topology private \
     --networking ${NETWORK} \
